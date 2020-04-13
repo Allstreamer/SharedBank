@@ -1,0 +1,8 @@
+name: SharedBankGui
+version: 1.0
+main: allstreamer_.sharedbankgui.SharedBankGui
+authors: [Allstreamer]
+description: A Shared Bank Between All Players
+commands:
+  shared:
+    description: Open Bank Gui
