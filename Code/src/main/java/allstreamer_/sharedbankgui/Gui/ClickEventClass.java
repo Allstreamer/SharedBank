@@ -9,6 +9,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.inventory.ItemStack;
 
 public class ClickEventClass implements Listener {
     private static Economy econ;
@@ -40,8 +41,10 @@ public class ClickEventClass implements Listener {
     @EventHandler
     public void ClickEvent(InventoryClickEvent Event){
         try {
-            String inventoryName = Event.getClickedInventory().getTitle();
-            Material ItemPickup = Event.getCurrentItem().getType();
+            String inventoryName = Event.getView().getTitle();
+            final ItemStack currentItem = Event.getCurrentItem();
+            if (currentItem == null) return;
+            Material ItemPickup = currentItem.getType();
 
             Player player = (Player) Event.getWhoClicked();
 

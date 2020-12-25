@@ -55,7 +55,7 @@ public final class SharedBankGui extends JavaPlugin {
             return false;
         }
         econ = rsp.getProvider();
-        return econ != null;
+        return true;
     }
 
     public static double round(double value, int places) {

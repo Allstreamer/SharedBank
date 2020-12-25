@@ -18,7 +18,7 @@ import java.util.*;
 public class SharedCommandClass implements CommandExecutor {
     Economy econ = SharedBankGui.getEconomy();
 
-    private static ItemStack FillerItem = new ItemStack(Material.STAINED_GLASS_PANE,1,(short)7);
+    private static ItemStack FillerItem = new ItemStack(Material.GRAY_STAINED_GLASS_PANE, 1);
     private static ItemMeta FillterItemMeta = FillerItem.getItemMeta();
 
     private static ItemStack DepositItem = new ItemStack(Material.CHEST,1);
@@ -35,12 +35,12 @@ public class SharedCommandClass implements CommandExecutor {
         FillerItem.setItemMeta(FillterItemMeta);
 
         DepositItemMeta.setDisplayName("Deposit Your Money");
-        List<String> DepositItemLore = Arrays.asList(new String[]{ChatColor.DARK_PURPLE + "Deposit Your Money Here!"});
+        List<String> DepositItemLore = Collections.singletonList(ChatColor.DARK_PURPLE + "Deposit Your Money Here!");
         DepositItemMeta.setLore(DepositItemLore);
         DepositItem.setItemMeta(DepositItemMeta);
 
         WithdrawItemMeta.setDisplayName("Withdraw Your Money");
-        List<String> WithdrawItemLore = Arrays.asList(new String[]{ChatColor.DARK_PURPLE + "Withdraw Your Money Here!"});
+        List<String> WithdrawItemLore = Collections.singletonList(ChatColor.DARK_PURPLE + "Withdraw Your Money Here!");
         WithdrawItemMeta.setLore(WithdrawItemLore);
         WithdrawItem.setItemMeta(WithdrawItemMeta);
     }
@@ -52,7 +52,7 @@ public class SharedCommandClass implements CommandExecutor {
 
             Inventory gui = Bukkit.createInventory(player,27, ChatColor.GOLD + "Shared Bank");
 
-            List<String> BankInfoItemLore = Arrays.asList(new String[]{ChatColor.DARK_PURPLE + "The Bank Has",ChatColor.GOLD + (SharedBankGui.getSharedMoney() + "$"),ChatColor.DARK_PURPLE + "You Have",ChatColor.GOLD + (SharedBankGui.round(econ.getBalance(player),2) + "$")});
+            List<String> BankInfoItemLore = Arrays.asList(ChatColor.DARK_PURPLE + "The Bank Has",ChatColor.GOLD + (SharedBankGui.getSharedMoney() + "$"),ChatColor.DARK_PURPLE + "You Have",ChatColor.GOLD + (SharedBankGui.round(econ.getBalance(player),2) + "$"));
             BankInfoItemMeta.setLore(BankInfoItemLore);
             BankInfoItemMeta.setDisplayName("Bank Account");
             BankInfoItem.setItemMeta(BankInfoItemMeta);
