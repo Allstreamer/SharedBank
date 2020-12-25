@@ -42,7 +42,7 @@ public class InteractionUI {
     private static ItemStack WithdrawItem3 = new ItemStack(Material.GOLD_BLOCK,1);
     private static ItemMeta WithdrawMeta3 = WithdrawItem3.getItemMeta();
 
-    private static ItemStack FillerItem = new ItemStack(Material.STAINED_GLASS_PANE,1,(short)7);
+    private static ItemStack FillerItem = new ItemStack(Material.GRAY_STAINED_GLASS_PANE,1);
     private static ItemMeta FillterItemMeta = FillerItem.getItemMeta();
 
     private static ItemStack BankInfoItem = new ItemStack(Material.ANVIL,1);
@@ -112,8 +112,8 @@ public class InteractionUI {
     }
 
     private void UpdateBankInfo(Player player){
-        List<String> BankInfoLore = Arrays.asList(new String[]{ChatColor.DARK_PURPLE + "Bank Money: ", ChatColor.GOLD + (SharedBankGui.getSharedMoney() + "$"),
-                ChatColor.DARK_PURPLE + "Your Money: ",ChatColor.GOLD + (econ.getBalance(player) + "$")});
+        List<String> BankInfoLore = Arrays.asList(ChatColor.DARK_PURPLE + "Bank Money: ", ChatColor.GOLD + (SharedBankGui.getSharedMoney() + "$"),
+                ChatColor.DARK_PURPLE + "Your Money: ",ChatColor.GOLD + (econ.getBalance(player) + "$"));
         BankInfoMeta.setLore(BankInfoLore);
         BankInfoItem.setItemMeta(BankInfoMeta);
 

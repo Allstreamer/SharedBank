@@ -1,7 +1,11 @@
 name: SharedBankGui
 version: ${project.version}
+api-version: 1.14
 main: allstreamer_.sharedbankgui.SharedBankGui
 authors: [Allstreamer]
+depend: [Vault]
+softdepend:
+  - GoldEconomy # Needed to get proper loading order
 description: A Shared Bank Between All Players
 commands:
   shared:
